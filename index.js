@@ -5,6 +5,7 @@ dotenv.config();
 const router = express.Router();
 const app = express();
 
+var port = process.env.PORT;
 var user = process.env.ORACLE_USER;
 var pass = process.env.ORACLE_PASSWORD;
 var host = process.env.ORACLE_HOST;
@@ -103,4 +104,4 @@ const getBalQuery = (value) => {
 }
 
 app.use(router);
-app.listen(8000, () => console.log(`Starting server on port`));
+app.listen(port, () => console.log(`Starting server on port ${port}`));
